@@ -1,0 +1,149 @@
+#include <Keyboard.h>
+
+void setup()
+{
+ Serial.begin(9600); //This pipes to the serial monitor
+  pinMode(2, INPUT_PULLUP);
+  pinMode(3, INPUT_PULLUP);
+  pinMode(4, INPUT_PULLUP);
+  pinMode(5, INPUT_PULLUP);
+  pinMode(6, INPUT_PULLUP);
+  pinMode(7, INPUT_PULLUP);
+  pinMode(8, INPUT_PULLUP);
+  pinMode(9, INPUT_PULLUP);
+  pinMode(10, INPUT_PULLUP);
+  pinMode(16, INPUT_PULLUP); 
+  pinMode(14, INPUT_PULLUP);
+  pinMode(15, INPUT_PULLUP);
+  pinMode(A0, INPUT_PULLUP);
+  pinMode(A1, INPUT_PULLUP); 
+  pinMode(A2, INPUT_PULLUP);
+  pinMode(A3, INPUT_PULLUP);
+  Keyboard.begin();
+}
+
+void loop()
+{
+//Pinky Top
+    if(digitalRead(A0)==LOW){
+    //Send an ASCII 'Tab' = 9,
+    Keyboard.press(193);
+    }
+    if(digitalRead(A0)==HIGH){
+    Keyboard.release(193);
+    }
+//Pinky Middle
+    if(digitalRead(3)==LOW){
+    //Send an ASCII 'f',
+    Keyboard.press(129);
+    }
+    if(digitalRead(3)==HIGH){
+    Keyboard.release(129);
+    }
+//Pinky Bottom
+    if(digitalRead(2)==LOW){
+    //Send an ASCII 'Shift',
+    Keyboard.press(102);
+    }
+    if(digitalRead(2)==HIGH){
+    Keyboard.release(102);
+    }    
+//Ring Top
+    if(digitalRead(15)==LOW){
+    //Send an ASCII 'm',
+    Keyboard.press(109);
+    }
+    if(digitalRead(15)==HIGH){
+    Keyboard.release(109);
+    }
+//Ring Middle
+    if(digitalRead(5)==LOW){
+    //Send an ASCII 'q',
+    Keyboard.press(97);
+    }
+    if(digitalRead(5)==HIGH){
+    Keyboard.release(97);
+    }
+//Ring Bottom
+    if(digitalRead(6)==LOW){
+    //Send an ASCII 'a',
+    Keyboard.press(113);
+    }
+    if(digitalRead(6)==HIGH){
+    Keyboard.release(113);
+    }    
+//Middle Top
+    if(digitalRead(14)==LOW){
+    //Send an ASCII 'w',
+    Keyboard.press(114);
+    }
+    if(digitalRead(14)==HIGH){
+    Keyboard.release(114);
+    }
+//Middle Middle
+    if(digitalRead(8)==LOW){
+    //Send an ASCII 'w',
+    Keyboard.press(119);
+    }
+    if(digitalRead(8)==HIGH){
+    Keyboard.release(119);
+    }
+//Middle Bottom
+    if(digitalRead(7)==LOW){
+    //Send an ASCII 's',
+    Keyboard.press(115);
+    }
+    if(digitalRead(7)==HIGH){
+    Keyboard.release(115);
+    }    
+//Pointer Top
+    if(digitalRead(16)==LOW){
+    //Send an ASCII '1',
+    Keyboard.press(1);
+    }
+    if(digitalRead(16)==HIGH){
+    Keyboard.release(1);
+    }
+//Pointer Middle
+    if(digitalRead(9)==LOW){
+    //Send an ASCII 'e',
+    Keyboard.press(100);
+    }
+    if(digitalRead(9)==HIGH){
+    Keyboard.release(100);
+    }
+//Pointer Bottom
+    if(digitalRead(10)==LOW){
+    //Send an ASCII 'd',
+    Keyboard.press(101);
+    }
+    if(digitalRead(10)==HIGH){
+    Keyboard.release(101);
+    }
+//Thumb top
+  //Missing due to soldering mishap
+//Thumb Left
+    if(digitalRead(A1)==LOW){
+    //Send an ASCII 'ctrl',
+    Keyboard.press(128);
+    }
+    if(digitalRead(A1)==HIGH){
+    Keyboard.release(128);
+    }
+//Thumb Bottom
+    if(digitalRead(A3)==LOW){
+    //Send an ASCII 'Space',
+    Keyboard.press(32);
+    }
+    if(digitalRead(A3)==HIGH){
+    Keyboard.release(32);
+    }
+//Thumb Right
+    if(digitalRead(A2)==LOW){
+    //Send an ASCII '5',
+    Keyboard.press(53);
+    }
+    if(digitalRead(A2)==HIGH){
+    Keyboard.release(53);
+    }  
+}
